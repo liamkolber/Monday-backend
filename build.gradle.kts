@@ -35,5 +35,6 @@ dependencies {
 
     implementation("org.litote.kmongo:kmongo:5.1.0")
     implementation("ch.qos.logback:logback-classic:1.5.6")
+    implementation("org.mongodb:mongodb-driver-kotlin-coroutine:5.1.1")
 
 }

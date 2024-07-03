@@ -2,10 +2,17 @@ package example.com.collection
 
 import example.com.plugins.MongoDatabase
 import example.com.model.Fragrance
+import org.litote.kmongo.getCollection
 
 class FragranceCollection() {
-    val collection = MongoDatabase().getDatabase().getCollection("fragrance")
+    val collection = MongoDatabase().getDatabase().getCollection<Fragrance>("fragrances")
 
-    fun getAllFragrances(): List<Fragrance> = emptyList()
+    fun getAllFragrances() = collection.find().toList()
+
+    //add
+
+    //update
+
+    //delete
 }
 
