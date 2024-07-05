@@ -15,9 +15,7 @@ fun Application.module() {
     configureRouting()
 
     val loggerContext = LoggerFactory.getILoggerFactory() as LoggerContext
-    val rootLogger = loggerContext.getLogger("org.mongodb.driver")
-    val routeLogger = loggerContext.getLogger("io.ktor.routing.Routing")
-    rootLogger.setLevel(Level.OFF)
-    routeLogger.setLevel(Level.OFF)
+    loggerContext.getLogger("org.mongodb.driver").setLevel(Level.OFF)
+    loggerContext.getLogger("io.ktor.routing.Routing").setLevel(Level.OFF)
     configureMongo()
 }

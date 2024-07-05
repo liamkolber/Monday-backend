@@ -1,6 +1,5 @@
 package example.com.model
 
-import java.time.LocalDate
 import org.bson.types.ObjectId
 import org.bson.codecs.pojo.annotations.BsonId
 

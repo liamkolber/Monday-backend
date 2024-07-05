@@ -32,6 +32,7 @@ dependencies {
     implementation("io.ktor:ktor-server-config-yaml")
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.12")
 
     implementation("org.litote.kmongo:kmongo:5.1.0")
     implementation("ch.qos.logback:logback-classic:1.5.6")

@@ -9,7 +9,7 @@ class FragranceCollection() {
 
     fun getAllFragrances() = collection.find().toList()
 
-    //add
+    fun addFragrance(fragrance: Fragrance) = collection.insertOne(fragrance)
 
     //update
 
