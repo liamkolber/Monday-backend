@@ -30,12 +30,17 @@ dependencies {
     implementation("io.ktor:ktor-server-netty-jvm")
     implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("io.ktor:ktor-server-config-yaml")
-    testImplementation("io.ktor:ktor-server-tests-jvm")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.12")
-
     implementation("org.litote.kmongo:kmongo:5.1.0")
     implementation("ch.qos.logback:logback-classic:1.5.6")
     implementation("org.mongodb:mongodb-driver-kotlin-coroutine:5.1.1")
 
+    testImplementation("io.ktor:ktor-server-tests-jvm")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    testImplementation("io.kotest:kotest-runner-junit5:5.9.1")
+    testImplementation("io.kotest:kotest-assertions-core:5.9.1")
+}
+
+tasks.withType<Test>().configureEach {
+   useJUnitPlatform()
 }

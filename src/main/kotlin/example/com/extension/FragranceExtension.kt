@@ -6,8 +6,8 @@ import org.bson.types.ObjectId
 
 
 fun Fragrance.toDto() = FragranceDto(
-    mongoID = this.id.toString(),
-    id = this.fragranceId,
+    id = this.id.toString(),
+    fragranceId = this.fragranceId,
     name = this.name,
     description = this.description,
     category = this.category,
@@ -17,8 +17,8 @@ fun Fragrance.toDto() = FragranceDto(
 )
 
 fun FragranceDto.toFragrance() = Fragrance(
-    id = ObjectId(this.mongoID),
-    fragranceId = this.id,
+    id = if(this.id == null) {null} else {ObjectId(this.id)},
+    fragranceId = this.fragranceId,
     name = this.name,
     description = this.description,
     category = this.category,

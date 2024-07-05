@@ -1,18 +1,22 @@
 package example.com.collection
 
+import com.mongodb.client.result.InsertOneResult
 import example.com.plugins.MongoDatabase
 import example.com.model.Fragrance
+import org.bson.types.ObjectId
+import org.litote.kmongo.deleteOneById
 import org.litote.kmongo.getCollection
+import org.litote.kmongo.replaceOneById
 
 class FragranceCollection() {
-    val collection = MongoDatabase().getDatabase().getCollection<Fragrance>("fragrances")
+    private val collection = MongoDatabase().getDatabase().getCollection<Fragrance>("fragrances")
 
     fun getAllFragrances() = collection.find().toList()
 
-    fun addFragrance(fragrance: Fragrance) = collection.insertOne(fragrance)
+    fun addFragrance(fragrance: Fragrance): InsertOneResult = collection.insertOne(fragrance)
 
-    //update
+    fun updateFragrance(id: ObjectId, newFragrance: Fragrance) = collection.replaceOneById(id, newFragrance)
 
-    //delete
+    fun deleteFragrance(id: ObjectId) = collection.deleteOneById(id)
 }
 

@@ -4,8 +4,8 @@ import kotlinx.serialization.*
 
 @Serializable
 data class FragranceDto (
-    var mongoID: String? = null,
-    var id: String,
+    var id: String? = null,
+    var fragranceId: String,
     var name: String,
     var description: String,
     var category: String,

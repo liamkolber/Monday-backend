@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="example.com.ApplicationTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2024-07-05T04:41:10" hostname="MGC1Q2W2FN9D" time="0.0">
-  <properties/>
-  <testcase name="testRoot" classname="example.com.ApplicationTest" time="0.0">
-    <skipped/>
-  </testcase>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
