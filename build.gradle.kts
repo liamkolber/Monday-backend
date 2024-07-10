@@ -34,6 +34,7 @@ dependencies {
     implementation("org.litote.kmongo:kmongo:5.1.0")
     implementation("ch.qos.logback:logback-classic:1.5.6")
     implementation("org.mongodb:mongodb-driver-kotlin-coroutine:5.1.1")
+    implementation("io.ktor:ktor-server-cors:2.3.12")
 
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")

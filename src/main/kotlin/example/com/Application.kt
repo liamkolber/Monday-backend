@@ -6,6 +6,7 @@ import ch.qos.logback.classic.Level
 import ch.qos.logback.classic.LoggerContext
 import org.slf4j.LoggerFactory
 
+
 fun main(args: Array<String>) {
     io.ktor.server.netty.EngineMain.main(args)
 }
@@ -13,6 +14,7 @@ fun main(args: Array<String>) {
 fun Application.module() {
     configureSerialization()
     configureRouting()
+    configureCORS()
 
     val loggerContext = LoggerFactory.getILoggerFactory() as LoggerContext
     loggerContext.getLogger("org.mongodb.driver").setLevel(Level.OFF)
