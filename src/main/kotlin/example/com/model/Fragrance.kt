@@ -7,7 +7,7 @@ data class Fragrance (
     @BsonId
     var id: ObjectId? = null,
     
-    var fragranceId: String,
+    var fragranceId: String? = null,
     var name: String,
     var description: String,
     var category: String,
