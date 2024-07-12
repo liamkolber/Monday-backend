@@ -20,6 +20,13 @@ fun Application.configureRouting() {
             call.respond(fragrances)
         }
 
+        get("/{fragranceId}") {
+            val fragranceId = call.parameters["fragranceId"]
+
+            val fragrance = fragranceCollection.getByFragranceId(fragranceId!!)!!.toDto()
+            call.respond(fragrance)
+        }
+
         post("/") {
             val fragrance = call.receive<FragranceDto>().toFragrance()
 

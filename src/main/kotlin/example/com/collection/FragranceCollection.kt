@@ -5,6 +5,7 @@ import example.com.plugins.MongoDatabase
 import example.com.model.Fragrance
 import org.bson.types.ObjectId
 import org.litote.kmongo.deleteOneById
+import org.litote.kmongo.eq
 import org.litote.kmongo.getCollection
 import org.litote.kmongo.replaceOneById
 
@@ -18,5 +19,7 @@ class FragranceCollection() {
     fun updateFragrance(id: ObjectId, newFragrance: Fragrance) = collection.replaceOneById(id, newFragrance)
 
     fun deleteFragrance(id: ObjectId) = collection.deleteOneById(id)
+
+    fun getByFragranceId(fragranceId: String): Fragrance? = collection.find(Fragrance::fragranceId eq fragranceId).firstOrNull()
 }
 
